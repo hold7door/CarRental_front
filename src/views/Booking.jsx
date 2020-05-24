@@ -39,7 +39,15 @@ class Book extends React.Component{
 	}
 	bookHandler(e){
 	 	e.preventDefault();
-	 	if (this.state.success === false && this.state.name && this.state.contact){
+	 	var isValid = false;
+	 	if(this.state.contact){
+	 		var phoneno = /^\d{10}$/;
+	 		var cc = this.state.contact;
+	  		if (cc.match(phoneno)){
+	  			isValid = true;
+	  		}
+	 	}
+	 	if (this.state.success === false && this.state.name && isValid){
 	 		//console.log(this.state);
 	 		axios({
 	 			method : 'post',

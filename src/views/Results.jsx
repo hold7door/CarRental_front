@@ -41,19 +41,21 @@ class Results extends React.Component{
 			}).then((response)=>{
 				if (response.status === 200){
 					//console.log(response.data);
-					let updatedTableData = [];
-					for (let vdata of response.data.AllResults){
-						updatedTableData.push(vdata);
+					if (response.data.success === true){
+						let updatedTableData = [];
+						for (let vdata of response.data.AllResults){
+							updatedTableData.push(vdata);
+						}
+						this.setState({
+							tableData : updatedTableData,
+							city : find_info.city,
+							issueDate : find_info.issueDate,
+							issueTime : find_info.issueTime,
+							returnDate : find_info.returnDate,
+							returnTime : find_info.returnTime,
+							validData : true
+						});
 					}
-					this.setState({
-						tableData : updatedTableData,
-						city : find_info.city,
-						issueDate : find_info.issueDate,
-						issueTime : find_info.issueTime,
-						returnDate : find_info.returnDate,
-						returnTime : find_info.returnTime,
-						validData : true
-					});
 				}
 
 			}).catch((err)=>{
