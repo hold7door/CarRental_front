@@ -23,8 +23,8 @@ class Home extends React.Component{
 	}
 	componentDidMount(){
 		let curDateOb = new Date();
-		curDateOb.setTime(curDateOb.getTime() + 330*60*1000);
 		console.log(curDateOb);
+		curDateOb.setTime(curDateOb.getTime() + 330*60*1000);
 		curDateOb.setTime(curDateOb.getTime() + 36*60*60*1000);
 		let curDate = curDateOb.toISOString();
 		let mIDate = curDate.slice(0, 10);
