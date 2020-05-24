@@ -82,3 +82,14 @@
 .active-bookings-wrapper{
 	margin-top: 5%;
 }
+#error-msg-box, .err-box{
+	display: flex;
+  	justify-content: center;
+	font-weight: bold;
+	font-size: 30px;
+	background: #b8d3ff;
+	height: 15%;
+}
+#msg-txt{
+	background: #b8d3ff
+}

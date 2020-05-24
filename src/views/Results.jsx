@@ -108,6 +108,19 @@ class Results extends React.Component{
 				</div>
 			);
 		}
+		if (tableDataHtml.length === 0){
+			return(
+				<div className="item-vehicle err-box">
+					<Row>
+						<Col md="12">
+							<div id="error-msg-box" className="flexer-1 bg-white">
+									<span id="msg-txt"> No Cars found</span>
+							</div>
+						</Col>
+					</Row>
+				</div>
+			);
+		}
 		return tableDataHtml;
 	}
 	render(){
