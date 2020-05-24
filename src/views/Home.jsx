@@ -10,11 +10,11 @@ class Home extends React.Component{
 		this.setTimeIssue = this.setTimeIssue.bind(this);
 		this.setTimeReturn = this.setTimeReturn.bind(this);
 		this.state = {
-			city : undefined,
+			city : "",
 			issueDate : undefined,
-			issueTime : undefined,
+			issueTime : "00:00",
 			returnDate : undefined,
-			returnTime : undefined,
+			returnTime : "00:00",
 			minIssueDate : undefined,
 			maxIssueDate : "2020-12-31",
 			minReturnDate : undefined,
@@ -23,23 +23,41 @@ class Home extends React.Component{
 	}
 	componentDidMount(){
 		let curDateOb = new Date();
+		curDateOb.setTime(curDateOb.getTime() + 330*60*1000);
+		curDateOb.setTime(curDateOb.getTime() + 36*60*60*1000);
 		let curDate = curDateOb.toISOString();
 		let mIDate = curDate.slice(0, 10);
-		let mRDate = mIDate;
+		curDateOb.setTime(curDateOb.getTime() + 24*60*60*1000);
+		curDate = curDateOb.toISOString();
+		let mRDate = curDate.slice(0, 10);
 		this.setState({
 			minIssueDate : mIDate,
-			minReturnDate : mRDate
+			minReturnDate : mRDate,
+			issueDate : mIDate,
+			returnDate : mRDate
 		});
 	}
 	onChange(e){
-		//console.log(e);
-    	this.setState({
-			[e.target.name] : e.target.value
-    	});
+		//console.log(e.target.name);
+		if (e.target.name === "issueDate"){
+			let changedMinReturn = new Date(e.target.value);
+			changedMinReturn.setTime(changedMinReturn.getTime() + 24*60*60*1000);
+			let asString = changedMinReturn.toISOString();
+			this.setState({
+				[e.target.name] : e.target.value,
+				minReturnDate : asString.slice(0, 10)
+			});
+		}
+		else{
+	    	this.setState({
+				[e.target.name] : e.target.value
+	    	});
+    	}
 	}
 	setTimeIssue(e){
+		console.log(e);
 		this.setState({
-			issueTime : e
+			issueTime : e,
 		});
 	}
 	setTimeReturn(e){
