@@ -40,7 +40,7 @@ class Results extends React.Component{
 				}
 			}).then((response)=>{
 				if (response.status === 200){
-					if (response.data.success === true){
+					if (response.data.success == true){
 						console.log(response.data);
 						let updatedTableData = [];
 						for (let vdata of response.data.AllResults){
