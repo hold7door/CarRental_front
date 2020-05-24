@@ -116,6 +116,7 @@ class Details extends React.Component{
 									<p><h4>{this.state.model}</h4></p>
 									<p className="text-muted"><BsPeopleFill/> {this.state.seatingCapacity} Seater</p>
 									<p>Rent per day : {this.state.rentPerDay}</p>
+									<p>Vehicle Number : {this.state.number}</p>
 									<Link to={{ pathname: '/book', state : forBookingData }}><Button color="info">Book Now</Button></Link>
 								</div>
 							</Col>
