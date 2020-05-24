@@ -65,7 +65,7 @@
 }
 
 .vehicle-details-wrapper{
-	height: 55%;
+	height: 50%;
 	border-radius: 6px;
 	border-style : solid;
 	border-color: #e3d7d5;
@@ -81,9 +81,4 @@
 }
 .active-bookings-wrapper{
 	margin-top: 5%;
-}
-.modal {
-  font-size: 12px;
-  width: 50px;
-  height: 100px;
 }
