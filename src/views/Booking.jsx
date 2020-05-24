@@ -148,7 +148,7 @@ class Book extends React.Component{
 								<Col>
 								      <FormGroup>
 								        <Label for="cust-contact">Contact Number</Label>
-								        <Input className="border-top-0 border-right-0 border-left-0" type="text" id="cust-contact" name="contact" placeholder="+91" value={this.state.contact} onChange={this.onChange} />
+								        <Input className="border-top-0 border-right-0 border-left-0" type="text" id="cust-contact" name="contact" placeholder="+91" maxlength="10" value={this.state.contact} onChange={this.onChange} />
 								      	<FormText><p className="text-danger">Required</p></FormText>
 								      </FormGroup>
 								</Col>
