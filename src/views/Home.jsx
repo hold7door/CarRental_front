@@ -23,7 +23,7 @@ class Home extends React.Component{
 	}
 	componentDidMount(){
 		let curDate = new Date();
-		let mIDate = curDate.splice(0, 10);
+		let mIDate = curDate.slice(0, 10);
 		let mRDate = mIDate;
 		this.setState({
 			minIssueDate : mIDate,
