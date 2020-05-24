@@ -48,7 +48,7 @@ class Home extends React.Component{
 			this.setState({
 				[e.target.name] : e.target.value,
 				minReturnDate : asString.slice(0, 10),
-				returnDate : asString.slice(0, 10),
+				returnDate : asString.slice(0, 10)
 			});
 		}
 		else{
