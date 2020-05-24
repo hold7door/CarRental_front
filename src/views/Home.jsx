@@ -23,7 +23,7 @@ class Home extends React.Component{
 	}
 	componentDidMount(){
 		let curDateOb = new Date();
-		console.log(curDateOb);
+		//console.log(curDateOb);
 		curDateOb.setTime(curDateOb.getTime() + 330*60*1000);
 		curDateOb.setTime(curDateOb.getTime() + 36*60*60*1000);
 		let curDate = curDateOb.toISOString();
@@ -47,7 +47,8 @@ class Home extends React.Component{
 			let asString = changedMinReturn.toISOString();
 			this.setState({
 				[e.target.name] : e.target.value,
-				minReturnDate : asString.slice(0, 10)
+				minReturnDate : asString.slice(0, 10),
+				returnDate : asString.slice(0, 10),
 			});
 		}
 		else{
