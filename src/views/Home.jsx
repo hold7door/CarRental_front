@@ -24,6 +24,7 @@ class Home extends React.Component{
 	componentDidMount(){
 		let curDateOb = new Date();
 		curDateOb.setTime(curDateOb.getTime() + 330*60*1000);
+		console.log(curDateOb);
 		curDateOb.setTime(curDateOb.getTime() + 36*60*60*1000);
 		let curDate = curDateOb.toISOString();
 		let mIDate = curDate.slice(0, 10);
@@ -41,6 +42,7 @@ class Home extends React.Component{
 		//console.log(e.target.name);
 		if (e.target.name === "issueDate"){
 			let changedMinReturn = new Date(e.target.value);
+			console.log(changedMinReturn);
 			changedMinReturn.setTime(changedMinReturn.getTime() + 24*60*60*1000);
 			let asString = changedMinReturn.toISOString();
 			this.setState({
@@ -55,7 +57,7 @@ class Home extends React.Component{
     	}
 	}
 	setTimeIssue(e){
-		console.log(e);
+		//console.log(e);
 		this.setState({
 			issueTime : e,
 		});
