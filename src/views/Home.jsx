@@ -22,7 +22,8 @@ class Home extends React.Component{
 		};
 	}
 	componentDidMount(){
-		let curDate = new Date();
+		let curDateOb = new Date();
+		let curDate = curDateOb.toISOString();
 		let mIDate = curDate.slice(0, 10);
 		let mRDate = mIDate;
 		this.setState({
