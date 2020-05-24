@@ -14,8 +14,21 @@ class Home extends React.Component{
 			issueDate : undefined,
 			issueTime : undefined,
 			returnDate : undefined,
-			returnTime : undefined
+			returnTime : undefined,
+			minIssueDate : undefined,
+			maxIssueDate : "2020-12-31",
+			minReturnDate : undefined,
+			maxReturnDate : "2020-12-31"
 		};
+	}
+	componentDidMount(){
+		let curDate = new Date();
+		let mIDate = curDate.splice(0, 10);
+		let mRDate = mIDate;
+		this.setState({
+			minIssueDate : mIDate,
+			minReturnDate : mRDate
+		});
 	}
 	onChange(e){
 		//console.log(e);
@@ -47,7 +60,7 @@ class Home extends React.Component{
 	            <Col md="6">
 	              <InputGroup size="sm">
 	                <InputGroupAddon addonType="prepend">Issue Date</InputGroupAddon>
-	               <Input name="issueDate" type="date" min="2020-05-23" max="2020-06-23" value={this.state.issueDate} onChange={this.onChange} required/>
+	               <Input name="issueDate" type="date" min={this.state.minIssueDate} max={this.state.maxIssueDate} value={this.state.issueDate} onChange={this.onChange} required/>
 	              </InputGroup>
 	            </Col>
 	            <Col>
@@ -62,7 +75,7 @@ class Home extends React.Component{
 	            <Col md="6">
 	              <InputGroup size="sm">
 	                <InputGroupAddon addonType="prepend">Return Date</InputGroupAddon>
-	                <Input name="returnDate" type="date" min="2020-05-23" max="2020-06-23" value={this.state.returnDate} onChange={this.onChange} required/>
+	                <Input name="returnDate" type="date" min={this.state.minReturnDate} max={this.state.maxReturnDate} value={this.state.returnDate} onChange={this.onChange} required/>
 	              </InputGroup>
 	            </Col>
 	            <Col>
